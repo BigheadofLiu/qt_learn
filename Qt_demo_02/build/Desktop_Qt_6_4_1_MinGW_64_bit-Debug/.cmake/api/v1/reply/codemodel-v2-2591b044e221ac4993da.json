@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-578dd1ade37a307035df.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Qt_demo_02",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Qt_demo_02::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qt_demo_02-Debug-e947846b014678dad482.json",
+					"name" : "Qt_demo_02",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Qt_demo_02_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qt_demo_02_autogen-Debug-3527fb6c52ca8de3f30a.json",
+					"name" : "Qt_demo_02_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Qt_demo_02_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qt_demo_02_autogen_timestamp_deps-Debug-6fc704ba5e0275388424.json",
+					"name" : "Qt_demo_02_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Demo/Cpp/QT/Qt_demo_02/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug",
+		"source" : "E:/Demo/Cpp/QT/Qt_demo_02"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
