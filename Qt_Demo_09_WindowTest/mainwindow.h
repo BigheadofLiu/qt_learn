@@ -28,6 +28,8 @@ private slots:
 
     void on_showDia_clicked();
 
+    void on_showmsgBtn_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

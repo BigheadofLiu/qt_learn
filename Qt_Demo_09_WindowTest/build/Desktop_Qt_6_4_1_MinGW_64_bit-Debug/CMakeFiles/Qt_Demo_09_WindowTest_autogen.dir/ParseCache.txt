@@ -334,9 +334,9 @@ E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mainwindow.h
  mdp:E:/soft/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/vadefs.h
  mdp:E:/soft/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h
  mdp:E:/soft/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h
-E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/main.cpp
 E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mainwindow.cpp
  uic:./ui_mainwindow.h
+E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/main.cpp
 E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mydialog.h
  mmc:Q_OBJECT
  mdp:E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/Qt_Demo_09_WindowTest_autogen/moc_predefs.h

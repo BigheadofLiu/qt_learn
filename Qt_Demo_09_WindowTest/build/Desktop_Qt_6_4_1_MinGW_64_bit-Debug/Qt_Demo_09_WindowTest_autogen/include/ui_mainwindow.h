@@ -28,6 +28,7 @@ public:
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
     QPushButton *showDia;
+    QPushButton *showmsgBtn;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -53,6 +54,9 @@ public:
         showDia = new QPushButton(centralwidget);
         showDia->setObjectName("showDia");
         showDia->setGeometry(QRect(310, 330, 92, 28));
+        showmsgBtn = new QPushButton(centralwidget);
+        showmsgBtn->setObjectName("showmsgBtn");
+        showmsgBtn->setGeometry(QRect(290, 370, 141, 28));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -75,6 +79,7 @@ public:
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "\344\277\256\346\224\271\347\252\227\345\217\243\347\232\204\344\275\215\347\275\256\345\222\214\345\260\272\345\257\270\344\277\241\346\201\257", nullptr));
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "\344\277\256\346\224\271\347\252\227\345\217\243\345\233\276\346\240\207\345\222\214\346\240\207\351\242\230", nullptr));
         showDia->setText(QCoreApplication::translate("MainWindow", "showDialog", nullptr));
+        showmsgBtn->setText(QCoreApplication::translate("MainWindow", "showMessageBox", nullptr));
     } // retranslateUi
 
 };

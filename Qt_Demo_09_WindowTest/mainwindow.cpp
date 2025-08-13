@@ -3,6 +3,7 @@
 #include <QRect>
 #include <QPoint>
 #include <QDebug>
+#include <QMessageBox>
 #include "mydialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
@@ -92,9 +93,7 @@ void MainWindow::on_pushButton_4_clicked()
 
 
 void MainWindow::on_showDia_clicked()
-{
-
-
+{   //Dialog类内信号槽的使用
 
     myDialog* myDia=new myDialog(this);
     //输出返回值
@@ -117,7 +116,19 @@ void MainWindow::on_showDia_clicked()
     }else{
         qDebug()<<"done button clicked"<<ret;
     }
+}
 
-
+void MainWindow::on_showmsgBtn_clicked()
+{
+    //QMessageBox对话框的使用
+    QMessageBox* qmsg=new QMessageBox(this);
+    qmsg->about(this,"about","这是一条about消息框");
+    qmsg->critical(this,"critical","这是一条错误critical提示框");
+    int ret=qmsg->question(this,"question","确定要保存吗?",qmsg->Save|qmsg->Cancel,qmsg->Save);
+    if(ret==qmsg->Save){
+        qmsg->information(this,"infimation","保存成功");
+    }else{
+        qmsg->warning(this,"warning","取消保存");
+    }
 }
 
