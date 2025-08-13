@@ -3,6 +3,7 @@
 #include <QRect>
 #include <QPoint>
 #include <QDebug>
+#include "mydialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -26,6 +27,21 @@ MainWindow::MainWindow(QWidget *parent)
     connect(this,&MainWindow::windowIconChanged,this,[=](const QIcon& icon){
         qDebug()<<"窗口图标已发生变更";
     });
+
+    //设置鼠标右键点击事件
+    setContextMenuPolicy(Qt::CustomContextMenu);
+    //鼠标右键点击后绑定对应的槽函数
+    connect(this,&MainWindow::customContextMenuRequested,this,[=](const QPoint& pos){
+        QMenu qMenu;
+        //添加菜单选项
+        qMenu.addMenu("丁真珍珠");
+        qMenu.addMenu("芙蓉王源");
+        qMenu.addMenu("一给我Giao");
+        //菜单显示(在鼠标点击坐标处显示)
+        // qMenu.exec(QPoint(pos));
+        qMenu.exec(QCursor::pos());
+    });
+
 }
 
 MainWindow::~MainWindow()
@@ -69,7 +85,39 @@ void MainWindow::on_pushButton_3_clicked()
 
 void MainWindow::on_pushButton_4_clicked()
 {
+    //修改窗口图标和窗口标题 会触发对应的signal
     setWindowIcon(QIcon("C:\\Users\\ZYB\\Pictures\\icon\\像素-红蘑菇.png"));
     setWindowTitle("QT,我来了！");
+}
+
+
+void MainWindow::on_showDia_clicked()
+{
+
+
+
+    myDialog* myDia=new myDialog(this);
+    //输出返回值
+    connect(myDia,&QDialog::accepted,this,[=](/*int ret*/){
+        qDebug()<<"accept信号被发射";
+    });
+    connect(myDia,&QDialog::rejected,this,[=](/*int ret*/){
+        qDebug()<<"reject信号被发射";
+    });
+    connect(myDia,&QDialog::finished,this,[=](int ret){
+        qDebug()<<ret;
+    });
+
+    int ret=myDia->exec();
+    //通过返回值判断按钮点击类型
+    if(ret==QDialog::Accepted){  //枚举值 相当于1
+        qDebug()<<"accept button clicked"<<ret;
+    }else if(ret==QDialog::Rejected){ //枚举值 相当于0
+        qDebug()<<"reject button clicked"<<ret;
+    }else{
+        qDebug()<<"done button clicked"<<ret;
+    }
+
+
 }
 

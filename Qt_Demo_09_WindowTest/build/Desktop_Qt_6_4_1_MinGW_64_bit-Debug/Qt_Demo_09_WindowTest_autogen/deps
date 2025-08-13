@@ -8,6 +8,8 @@ Qt_Demo_09_WindowTest_autogen/timestamp: \
 	E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/main.cpp \
 	E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mainwindow.cpp \
 	E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mainwindow.h \
+	E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mydialog.cpp \
+	E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mydialog.h \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtCore/qalgorithms.h \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtCore/qanystringview.h \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtCore/qarraydata.h \
@@ -116,7 +118,9 @@ Qt_Demo_09_WindowTest_autogen/timestamp: \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtGui/qtransform.h \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtGui/qwindowdefs.h \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtGui/qwindowdefs_win.h \
+	E:/soft/Qt/6.4.1/mingw_64/include/QtWidgets/QDialog \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtWidgets/QMainWindow \
+	E:/soft/Qt/6.4.1/mingw_64/include/QtWidgets/qdialog.h \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtWidgets/qmainwindow.h \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtWidgets/qsizepolicy.h \
 	E:/soft/Qt/6.4.1/mingw_64/include/QtWidgets/qtabwidget.h \
@@ -529,4 +533,5 @@ Qt_Demo_09_WindowTest_autogen/timestamp: \
 	E:/soft/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wchar.h \
 	E:/soft/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include/wctype.h \
 	E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mainwindow.ui \
+	E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mydialog.ui \
 	E:/soft/Qt/Tools/CMake_64/bin/cmake.exe

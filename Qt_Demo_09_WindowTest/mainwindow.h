@@ -26,6 +26,8 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_showDia_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

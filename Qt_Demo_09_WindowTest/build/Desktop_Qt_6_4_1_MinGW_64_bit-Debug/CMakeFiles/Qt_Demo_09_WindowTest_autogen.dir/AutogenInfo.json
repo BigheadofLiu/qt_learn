@@ -286,6 +286,12 @@
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
 			null
+		],
+		[
+			"E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mydialog.h",
+			"MU",
+			"EWIEGA46WW/moc_mydialog.cpp",
+			null
 		]
 	],
 	"HEADER_EXTENSIONS" : [ "h", "hh", "h++", "hm", "hpp", "hxx", "in", "txx" ],
@@ -359,7 +365,8 @@
 	"SOURCES" : 
 	[
 		[ "E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/main.cpp", "MU", null ],
-		[ "E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mainwindow.cpp", "MU", null ]
+		[ "E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mainwindow.cpp", "MU", null ],
+		[ "E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/mydialog.cpp", "MU", null ]
 	],
 	"UIC_OPTIONS" : [],
 	"UIC_SEARCH_PATHS" : [],
