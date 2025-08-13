@@ -29,6 +29,7 @@ public:
     QPushButton *pushButton_4;
     QPushButton *showDia;
     QPushButton *showmsgBtn;
+    QPushButton *pushButton_5;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -57,6 +58,9 @@ public:
         showmsgBtn = new QPushButton(centralwidget);
         showmsgBtn->setObjectName("showmsgBtn");
         showmsgBtn->setGeometry(QRect(290, 370, 141, 28));
+        pushButton_5 = new QPushButton(centralwidget);
+        pushButton_5->setObjectName("pushButton_5");
+        pushButton_5->setGeometry(QRect(310, 410, 92, 28));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -80,6 +84,7 @@ public:
         pushButton_4->setText(QCoreApplication::translate("MainWindow", "\344\277\256\346\224\271\347\252\227\345\217\243\345\233\276\346\240\207\345\222\214\346\240\207\351\242\230", nullptr));
         showDia->setText(QCoreApplication::translate("MainWindow", "showDialog", nullptr));
         showmsgBtn->setText(QCoreApplication::translate("MainWindow", "showMessageBox", nullptr));
+        pushButton_5->setText(QCoreApplication::translate("MainWindow", "fileDialog", nullptr));
     } // retranslateUi
 
 };

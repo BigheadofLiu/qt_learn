@@ -5,6 +5,7 @@
 #include <QDebug>
 #include <QMessageBox>
 #include "mydialog.h"
+#include <QFileDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -130,5 +131,26 @@ void MainWindow::on_showmsgBtn_clicked()
     }else{
         qmsg->warning(this,"warning","取消保存");
     }
+}
+
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    //fileDialog常用方法的使用
+ QFileDialog* qfd=new QFileDialog(this);
+#define OPENFILE
+#ifdef OPENDIR
+    //获取目录
+    QString dirName=qfd->getExistingDirectory(this,"打开目录","C:\\Users\\ZYB\\Pictures\\icon");
+    QMessageBox::information(this,"打开目录","当前选择的目录为："+dirName);
+#endif
+
+#ifdef OPENFILE
+    //获取单个文件
+    QString arg("Text files (.txt)");
+    QString fileName=qfd->getOpenFileName(this,tr("Open File"),"C:\\Users\\ZYB\\Pictures\\icon",tr("Image(*.png *.jpg);;Text files (*.txt)"),&arg);
+    QMessageBox::information(this,"Open File","选择的文件为:"+fileName);
+#endif
+
 }
 
