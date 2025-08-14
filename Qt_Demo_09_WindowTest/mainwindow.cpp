@@ -138,7 +138,7 @@ void MainWindow::on_pushButton_5_clicked()
 {
     //fileDialog常用方法的使用
  QFileDialog* qfd=new QFileDialog(this);
-#define OPENFILE
+#define SAVEFILE
 #ifdef OPENDIR
     //获取目录
     QString dirName=qfd->getExistingDirectory(this,"打开目录","C:\\Users\\ZYB\\Pictures\\icon");
@@ -146,10 +146,25 @@ void MainWindow::on_pushButton_5_clicked()
 #endif
 
 #ifdef OPENFILE
-    //获取单个文件
-    QString arg("Text files (.txt)");
+    //获取单个文件 tr为翻译时使用 可不加
+    QString arg("Text files (*.txt)");  //过滤器 指代默认情况
+    //多种格式用;;进行分隔
     QString fileName=qfd->getOpenFileName(this,tr("Open File"),"C:\\Users\\ZYB\\Pictures\\icon",tr("Image(*.png *.jpg);;Text files (*.txt)"),&arg);
     QMessageBox::information(this,"Open File","选择的文件为:"+fileName);
+#endif
+
+#ifdef OPENFILES
+    QStringList qsl=qfd->getOpenFileNames(this,tr("Open Files"),"C:\\Users\\ZYB\\Pictures\\icon",tr("Image(*.png *.jpg);;Text files (*.txt)"));
+    QString names;
+    for(int i=0;i<qsl.size();i++){
+        names+=qsl[i]+" ";
+    }
+    QMessageBox::information(this,tr("Open Files"),"选择的文件为："+names);
+#endif
+
+#ifdef SAVEFILE
+    QString save=qfd->getSaveFileName(this,tr("Save File"),"C:\\Users\\ZYB\\Pictures\\icon");
+    QMessageBox::information(this,"Save File","已保存文件:"+save);
 #endif
 
 }
