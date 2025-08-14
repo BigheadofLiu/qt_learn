@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -30,6 +31,8 @@ public:
     QPushButton *showDia;
     QPushButton *showmsgBtn;
     QPushButton *pushButton_5;
+    QLabel *myLabel;
+    QPushButton *setFontBtn;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -61,6 +64,12 @@ public:
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName("pushButton_5");
         pushButton_5->setGeometry(QRect(310, 410, 92, 28));
+        myLabel = new QLabel(centralwidget);
+        myLabel->setObjectName("myLabel");
+        myLabel->setGeometry(QRect(540, 310, 171, 131));
+        setFontBtn = new QPushButton(centralwidget);
+        setFontBtn->setObjectName("setFontBtn");
+        setFontBtn->setGeometry(QRect(310, 460, 92, 28));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -85,6 +94,8 @@ public:
         showDia->setText(QCoreApplication::translate("MainWindow", "showDialog", nullptr));
         showmsgBtn->setText(QCoreApplication::translate("MainWindow", "showMessageBox", nullptr));
         pushButton_5->setText(QCoreApplication::translate("MainWindow", "fileDialog", nullptr));
+        myLabel->setText(QCoreApplication::translate("MainWindow", "\344\270\200giao\346\210\221\351\207\214giao", nullptr));
+        setFontBtn->setText(QCoreApplication::translate("MainWindow", "\350\256\276\347\275\256\345\255\227\344\275\223", nullptr));
     } // retranslateUi
 
 };

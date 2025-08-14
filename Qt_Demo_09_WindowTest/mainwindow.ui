@@ -105,6 +105,32 @@
      <string>fileDialog</string>
     </property>
    </widget>
+   <widget class="QLabel" name="myLabel">
+    <property name="geometry">
+     <rect>
+      <x>540</x>
+      <y>310</y>
+      <width>171</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>一giao我里giao</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="setFontBtn">
+    <property name="geometry">
+     <rect>
+      <x>310</x>
+      <y>460</y>
+      <width>92</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>设置字体</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

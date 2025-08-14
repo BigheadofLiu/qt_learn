@@ -6,6 +6,7 @@
 #include <QMessageBox>
 #include "mydialog.h"
 #include <QFileDialog>
+#include <QFontDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -165,6 +166,19 @@ void MainWindow::on_pushButton_5_clicked()
 #ifdef SAVEFILE
     QString save=qfd->getSaveFileName(this,tr("Save File"),"C:\\Users\\ZYB\\Pictures\\icon");
     QMessageBox::information(this,"Save File","已保存文件:"+save);
+#endif
+}
+
+
+void MainWindow::on_setFontBtn_clicked()
+{
+    QFontDialog* qfl=new QFontDialog(this);
+#if 1
+    bool ok;
+    //字体选择窗体
+    QFont ft=qfl->getFont(&ok,QFont("微软雅黑",16,QFont::Bold),this);
+    // ui->myLabel->setFont(ft);  //设置某个控件字体
+    QApplication::setFont(ft); //设置整个窗体字体
 #endif
 
 }
