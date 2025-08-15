@@ -9,6 +9,8 @@
 #include <QFontDialog>
 #include <QColorDialog>
 #include <QInputDialog>
+#include <QProgressDialog>
+#include <QTimer>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -222,5 +224,31 @@ void MainWindow::on_pushButton_7_clicked()
     QMessageBox::information(this,"知心姐姐","我说了"+words);
 #endif
 
+}
+
+
+void MainWindow::on_showQProDiaBtn_clicked()
+{
+    QProgressDialog* qpd =new QProgressDialog("正在保存文件","取消保存",0,100,this);
+    // qpd->setWindowIcon(this->windowIcon());
+    qpd->setWindowTitle("保存中");
+    qpd->setWindowModality(Qt::WindowModal); //设置窗口模式为模态
+    qpd->show();
+    QTimer* timer=new QTimer();
+    static int value=0;
+    timer->start(50);
+    connect(timer,&QTimer::timeout,this,[=](){
+        qpd->setValue(value);
+        value++;
+        if(value>qpd->maximum()){
+            timer->stop();
+            value=0;
+        }
+        connect(qpd,&QProgressDialog::canceled,this,[=](){
+            timer->stop();
+            value=0;
+            qpd->close();
+        });
+    });
 }
 
