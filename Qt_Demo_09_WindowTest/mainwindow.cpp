@@ -7,6 +7,8 @@
 #include "mydialog.h"
 #include <QFileDialog>
 #include <QFontDialog>
+#include <QColorDialog>
+#include <QInputDialog>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -179,6 +181,45 @@ void MainWindow::on_setFontBtn_clicked()
     QFont ft=qfl->getFont(&ok,QFont("微软雅黑",16,QFont::Bold),this);
     // ui->myLabel->setFont(ft);  //设置某个控件字体
     QApplication::setFont(ft); //设置整个窗体字体
+#endif
+
+}
+
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    QColorDialog* qcd=new QColorDialog(this);
+    QColor color=qcd->getColor(QColor(Qt::black),this);
+    //绘制颜色需要用到绘图类 还没看到 下面直接打印颜色
+    QString colors=QString("r:%1, g:%2, b:%3, a:%4").arg(color.red()).arg(color.green()).arg(color.black()).arg(color.alpha());
+    ui->colorLabel->setText(colors);
+}
+
+
+void MainWindow::on_pushButton_7_clicked()
+{
+#define MULTITEXT
+#ifdef INPUT_INT
+    int age=QInputDialog::getInt(this,"设置年龄","选择你的年龄：",20,1,100,2);
+    QMessageBox::information(this,"提示","你的年龄为："+QString::number(age));
+#endif
+#ifdef INPUT_DOUBLE
+    int salary=QInputDialog::getDouble(this,"设置薪资","设置工资：",8000,3500,5000,2);
+    QMessageBox::information(this,"提示","你的工资为："+QString::number(salary));
+#endif
+#ifdef INPUT_ITEM
+    QStringList items;
+    items<<"苹果"<<"香蕉"<<"橘子"<<"西瓜"<<"火龙果";
+    QString choice=QInputDialog::getItem(this,"选择水果","选择你想吃的水果:",items,true);
+    QMessageBox::information(this,"提示","你的水果为："+choice);
+#endif
+#ifdef INPUT_TEXT
+    QString password=QInputDialog::getText(this,"设置密码","密码:",QLineEdit::Password,"123");
+    QMessageBox::information(this,"提示","你的密码为："+password);
+#endif
+#ifdef MULTITEXT
+    QString words=QInputDialog::getMultiLineText(this,"表白","你想对小姐姐说什么","I Love You");
+    QMessageBox::information(this,"知心姐姐","我说了"+words);
 #endif
 
 }
