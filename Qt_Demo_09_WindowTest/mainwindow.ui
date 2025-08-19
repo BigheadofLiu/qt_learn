@@ -193,8 +193,46 @@
      <height>24</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuSave">
+    <property name="title">
+     <string>Save</string>
+    </property>
+    <addaction name="save_action"/>
+    <addaction name="delete_action"/>
+   </widget>
+   <addaction name="menuSave"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="save_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/ZYB/Pictures/icon/保存.png</normaloff>C:/Users/ZYB/Pictures/icon/保存.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存文件</string>
+   </property>
+   <property name="toolTip">
+    <string>点击即可保存文件</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
+  <action name="delete_action">
+   <property name="icon">
+    <iconset>
+     <normaloff>C:/Users/ZYB/Pictures/icon/删除.png</normaloff>C:/Users/ZYB/Pictures/icon/删除.png</iconset>
+   </property>
+   <property name="text">
+    <string>删除</string>
+   </property>
+   <property name="toolTip">
+    <string>点击即可删除文件</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -49,6 +49,11 @@ MainWindow::MainWindow(QWidget *parent)
         qMenu.exec(QCursor::pos());
     });
 
+    //设置菜单栏点击触发事件
+    connect(ui->save_action,&QAction::triggered,this,[=](){
+        QMessageBox::information(this,"保存文件","文件保存成功！");
+    });
+
 }
 
 MainWindow::~MainWindow()

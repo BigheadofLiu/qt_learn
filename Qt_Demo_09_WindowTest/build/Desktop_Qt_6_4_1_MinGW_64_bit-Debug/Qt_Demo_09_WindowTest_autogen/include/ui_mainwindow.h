@@ -10,9 +10,11 @@
 #define UI_MAINWINDOW_H
 
 #include <QtCore/QVariant>
+#include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
@@ -23,6 +25,8 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
+    QAction *save_action;
+    QAction *delete_action;
     QWidget *centralwidget;
     QPushButton *pushButton;
     QPushButton *pushButton_2;
@@ -38,6 +42,7 @@ public:
     QPushButton *pushButton_7;
     QPushButton *showQProDiaBtn;
     QMenuBar *menubar;
+    QMenu *menuSave;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *MainWindow)
@@ -45,6 +50,18 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
         MainWindow->resize(800, 600);
+        save_action = new QAction(MainWindow);
+        save_action->setObjectName("save_action");
+        QIcon icon;
+        icon.addFile(QString::fromUtf8("C:/Users/ZYB/Pictures/icon/\344\277\235\345\255\230.png"), QSize(), QIcon::Normal, QIcon::Off);
+        save_action->setIcon(icon);
+        save_action->setMenuRole(QAction::MenuRole::NoRole);
+        delete_action = new QAction(MainWindow);
+        delete_action->setObjectName("delete_action");
+        QIcon icon1;
+        icon1.addFile(QString::fromUtf8("C:/Users/ZYB/Pictures/icon/\345\210\240\351\231\244.png"), QSize(), QIcon::Normal, QIcon::Off);
+        delete_action->setIcon(icon1);
+        delete_action->setMenuRole(QAction::MenuRole::NoRole);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         pushButton = new QPushButton(centralwidget);
@@ -90,10 +107,16 @@ public:
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 800, 24));
+        menuSave = new QMenu(menubar);
+        menuSave->setObjectName("menuSave");
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
         MainWindow->setStatusBar(statusbar);
+
+        menubar->addAction(menuSave->menuAction());
+        menuSave->addAction(save_action);
+        menuSave->addAction(delete_action);
 
         retranslateUi(MainWindow);
 
@@ -103,6 +126,14 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        save_action->setText(QCoreApplication::translate("MainWindow", "\344\277\235\345\255\230\346\226\207\344\273\266", nullptr));
+#if QT_CONFIG(tooltip)
+        save_action->setToolTip(QCoreApplication::translate("MainWindow", "\347\202\271\345\207\273\345\215\263\345\217\257\344\277\235\345\255\230\346\226\207\344\273\266", nullptr));
+#endif // QT_CONFIG(tooltip)
+        delete_action->setText(QCoreApplication::translate("MainWindow", "\345\210\240\351\231\244", nullptr));
+#if QT_CONFIG(tooltip)
+        delete_action->setToolTip(QCoreApplication::translate("MainWindow", "\347\202\271\345\207\273\345\215\263\345\217\257\345\210\240\351\231\244\346\226\207\344\273\266", nullptr));
+#endif // QT_CONFIG(tooltip)
         pushButton->setText(QCoreApplication::translate("MainWindow", "\347\247\273\345\212\250\347\252\227\345\217\243", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "\350\216\267\345\217\226\347\252\227\345\217\243\344\275\215\347\275\256", nullptr));
         pushButton_3->setText(QCoreApplication::translate("MainWindow", "\344\277\256\346\224\271\347\252\227\345\217\243\347\232\204\344\275\215\347\275\256\345\222\214\345\260\272\345\257\270\344\277\241\346\201\257", nullptr));
@@ -116,6 +147,7 @@ public:
         colorLabel->setText(QString());
         pushButton_7->setText(QCoreApplication::translate("MainWindow", "QInputDialog", nullptr));
         showQProDiaBtn->setText(QCoreApplication::translate("MainWindow", "showQProessDialog", nullptr));
+        menuSave->setTitle(QCoreApplication::translate("MainWindow", "Save", nullptr));
     } // retranslateUi
 
 };
