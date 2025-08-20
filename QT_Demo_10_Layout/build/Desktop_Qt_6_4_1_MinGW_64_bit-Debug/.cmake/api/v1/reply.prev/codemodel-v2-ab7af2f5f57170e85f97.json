@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-3929d9b3cdc2ea9f6e74.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "QT_Demo_10_Layout",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "QT_Demo_10_Layout::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QT_Demo_10_Layout-Debug-e160c1151dc84d309e1e.json",
+					"name" : "QT_Demo_10_Layout",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QT_Demo_10_Layout_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QT_Demo_10_Layout_autogen-Debug-364ef6ac754b37d3a506.json",
+					"name" : "QT_Demo_10_Layout_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "QT_Demo_10_Layout_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-QT_Demo_10_Layout_autogen_timestamp_deps-Debug-e22e0f30a67792c546d4.json",
+					"name" : "QT_Demo_10_Layout_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Demo/Cpp/QT/QT_Demo_10_Layout/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug",
+		"source" : "E:/Demo/Cpp/QT/QT_Demo_10_Layout"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
