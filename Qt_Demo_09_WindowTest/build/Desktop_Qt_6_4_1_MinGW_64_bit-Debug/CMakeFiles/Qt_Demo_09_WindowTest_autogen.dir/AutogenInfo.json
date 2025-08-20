@@ -273,7 +273,8 @@
 		"E:/soft/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets.cmake",
 		"E:/soft/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginTargets-relwithdebinfo.cmake",
 		"E:/soft/Qt/6.4.1/mingw_64/lib/cmake/Qt6Widgets/Qt6QWindowsVistaStylePluginAdditionalTargetInfo.cmake",
-		"E:/soft/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		"E:/soft/Qt/Tools/CMake_64/share/cmake-3.29/Modules/GNUInstallDirs.cmake",
+		"E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest/rec.qrc"
 	],
 	"CMAKE_SOURCE_DIR" : "E:/Demo/Cpp/QT/Qt_Demo_09_WindowTest",
 	"CROSS_CONFIG" : false,

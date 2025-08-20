@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 63,
+				"line" : 64,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 46,
+				"line" : 47,
 				"parent" : 0
 			},
 			{
@@ -365,7 +365,8 @@
 				0,
 				1,
 				2,
-				6
+				6,
+				12
 			]
 		}
 	],
@@ -484,7 +485,8 @@
 				0,
 				1,
 				2,
-				6
+				6,
+				12
 			]
 		},
 		{
@@ -493,8 +495,8 @@
 			[
 				3,
 				5,
-				8,
-				9
+				9,
+				10
 			]
 		},
 		{
@@ -503,14 +505,16 @@
 			[
 				4,
 				7,
-				10
+				8,
+				11
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				11
+				13,
+				14
 			]
 		}
 	],
@@ -562,6 +566,11 @@
 			"sourceGroupIndex" : 2
 		},
 		{
+			"backtrace" : 4,
+			"path" : "rec.qrc",
+			"sourceGroupIndex" : 2
+		},
+		{
 			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/Qt_Demo_09_WindowTest_autogen/include/ui_mainwindow.h",
@@ -581,8 +590,21 @@
 		},
 		{
 			"backtrace" : 0,
+			"compileGroupIndex" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/Qt_Demo_09_WindowTest_autogen/EWIEGA46WW/qrc_rec.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
 			"isGenerated" : true,
 			"path" : "build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/Qt_Demo_09_WindowTest_autogen/timestamp.rule",
+			"sourceGroupIndex" : 3
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/Qt_Demo_09_WindowTest_autogen/EWIEGA46WW/qrc_rec.cpp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],

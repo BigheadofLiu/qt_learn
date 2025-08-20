@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     //设置窗口标题
     setWindowTitle("你好，QT！");
     //设置窗口图标
-    setWindowIcon(QIcon("C:\\Users\\ZYB\\Pictures\\icon\\像素-马里奥.png"));
+    setWindowIcon(QIcon(":/resouces/img/像素-马里奥.png"));
     //窗口标题改变 signal
     connect(this,&MainWindow::windowTitleChanged,this,[=](const QString& title){
         qDebug()<<"窗口标题已变更为："<<title;
@@ -53,6 +53,33 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->save_action,&QAction::triggered,this,[=](){
         QMessageBox::information(this,"保存文件","文件保存成功！");
     });
+
+    //设置toolBar 添加Qweight组件
+    ui->toolBar->addWidget(new QPushButton("搜索"));
+    QLineEdit* qle=new QLineEdit("请输入你想搜索的内容",this);
+    // qle->setFixedWidth(200); //设置固定大小
+    ui->toolBar->addWidget(qle);
+
+    //添加多个toolBar
+    QToolBar* qtb1 =new QToolBar("toolbar2");
+    this->addToolBar(Qt::LeftToolBarArea,qtb1); //在主窗体左侧添加状态栏
+
+    //状态栏相关
+    ui->statusBar->showMessage("到达世界最高点，理塘！",5000);
+    QPushButton* qpb1 =new QPushButton("按钮1");
+    QLabel * qlb1=new QLabel("Hello Qt！");
+    ui->statusBar->addWidget(qpb1);
+    ui->statusBar->addWidget(qlb1);
+    //会把原来的状态栏信息覆盖 设置Qtimer
+    //定时出现 不写则一直不会出现
+    QTimer::singleShot(5000,this,[=](){
+        qpb1->show();
+        qlb1->show();
+    });
+
+    //添加浮动窗口 dockerWeight
+
+    //资源文件
 
 }
 
@@ -98,7 +125,7 @@ void MainWindow::on_pushButton_3_clicked()
 void MainWindow::on_pushButton_4_clicked()
 {
     //修改窗口图标和窗口标题 会触发对应的signal
-    setWindowIcon(QIcon("C:\\Users\\ZYB\\Pictures\\icon\\像素-红蘑菇.png"));
+    setWindowIcon(QIcon(":/resouces/img/像素-红蘑菇.png"));
     setWindowTitle("QT,我来了！");
 }
 
@@ -173,7 +200,7 @@ void MainWindow::on_pushButton_5_clicked()
 #endif
 
 #ifdef SAVEFILE
-    QString save=qfd->getSaveFileName(this,tr("Save File"),"C:\\Users\\ZYB\\Pictures\\icon");
+    QString save=qfd->getSaveFileName(this,tr("Save File"),":/resouces/img/保存.png");
     QMessageBox::information(this,"Save File","已保存文件:"+save);
 #endif
 }

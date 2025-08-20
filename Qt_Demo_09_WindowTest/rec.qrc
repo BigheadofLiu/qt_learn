@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="save">resouces/img/保存.png</file>
+        <file alias="delete">resouces/img/删除.png</file>
+        <file>resouces/img/像素-红蘑菇.png</file>
+        <file>resouces/img/像素-马里奥.png</file>
+    </qresource>
+</RCC>

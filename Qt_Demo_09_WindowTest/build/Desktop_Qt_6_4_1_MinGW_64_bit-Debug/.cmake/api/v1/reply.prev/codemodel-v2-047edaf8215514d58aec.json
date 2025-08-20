@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-a2ff45c00d9e521f2028.json",
+					"jsonFile" : "directory-.-Debug-68149eb87c5f23f0263e.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.16"
@@ -44,7 +44,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "Qt_Demo_09_WindowTest::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-Qt_Demo_09_WindowTest-Debug-d15fa381e95b44ee6e00.json",
+					"jsonFile" : "target-Qt_Demo_09_WindowTest-Debug-0d3387ab2c461dcb8231.json",
 					"name" : "Qt_Demo_09_WindowTest",
 					"projectIndex" : 0
 				},

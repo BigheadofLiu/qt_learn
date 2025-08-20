@@ -12,12 +12,14 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QDockWidget>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
@@ -43,7 +45,11 @@ public:
     QPushButton *showQProDiaBtn;
     QMenuBar *menubar;
     QMenu *menuSave;
-    QStatusBar *statusbar;
+    QToolBar *toolBar;
+    QStatusBar *statusBar;
+    QDockWidget *dockWidget;
+    QWidget *dockWidgetContents;
+    QPushButton *pushButton_8;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -66,43 +72,43 @@ public:
         centralwidget->setObjectName("centralwidget");
         pushButton = new QPushButton(centralwidget);
         pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(180, 50, 92, 28));
+        pushButton->setGeometry(QRect(60, 50, 92, 28));
         pushButton_2 = new QPushButton(centralwidget);
         pushButton_2->setObjectName("pushButton_2");
-        pushButton_2->setGeometry(QRect(180, 90, 101, 28));
+        pushButton_2->setGeometry(QRect(60, 90, 101, 28));
         pushButton_3 = new QPushButton(centralwidget);
         pushButton_3->setObjectName("pushButton_3");
-        pushButton_3->setGeometry(QRect(180, 140, 191, 28));
+        pushButton_3->setGeometry(QRect(60, 140, 191, 28));
         pushButton_4 = new QPushButton(centralwidget);
         pushButton_4->setObjectName("pushButton_4");
-        pushButton_4->setGeometry(QRect(180, 180, 191, 28));
+        pushButton_4->setGeometry(QRect(60, 180, 191, 28));
         showDia = new QPushButton(centralwidget);
         showDia->setObjectName("showDia");
-        showDia->setGeometry(QRect(180, 220, 92, 28));
+        showDia->setGeometry(QRect(60, 220, 92, 28));
         showmsgBtn = new QPushButton(centralwidget);
         showmsgBtn->setObjectName("showmsgBtn");
-        showmsgBtn->setGeometry(QRect(180, 260, 141, 28));
+        showmsgBtn->setGeometry(QRect(60, 260, 141, 28));
         pushButton_5 = new QPushButton(centralwidget);
         pushButton_5->setObjectName("pushButton_5");
-        pushButton_5->setGeometry(QRect(180, 300, 92, 28));
+        pushButton_5->setGeometry(QRect(60, 300, 92, 28));
         myLabel = new QLabel(centralwidget);
         myLabel->setObjectName("myLabel");
-        myLabel->setGeometry(QRect(440, 50, 171, 131));
+        myLabel->setGeometry(QRect(320, 50, 171, 131));
         setFontBtn = new QPushButton(centralwidget);
         setFontBtn->setObjectName("setFontBtn");
-        setFontBtn->setGeometry(QRect(180, 340, 92, 28));
+        setFontBtn->setGeometry(QRect(60, 340, 92, 28));
         pushButton_6 = new QPushButton(centralwidget);
         pushButton_6->setObjectName("pushButton_6");
-        pushButton_6->setGeometry(QRect(180, 380, 92, 28));
+        pushButton_6->setGeometry(QRect(60, 380, 92, 28));
         colorLabel = new QLabel(centralwidget);
         colorLabel->setObjectName("colorLabel");
-        colorLabel->setGeometry(QRect(440, 160, 221, 71));
+        colorLabel->setGeometry(QRect(320, 160, 221, 71));
         pushButton_7 = new QPushButton(centralwidget);
         pushButton_7->setObjectName("pushButton_7");
-        pushButton_7->setGeometry(QRect(180, 420, 111, 28));
+        pushButton_7->setGeometry(QRect(60, 420, 111, 28));
         showQProDiaBtn = new QPushButton(centralwidget);
         showQProDiaBtn->setObjectName("showQProDiaBtn");
-        showQProDiaBtn->setGeometry(QRect(180, 460, 171, 28));
+        showQProDiaBtn->setGeometry(QRect(60, 460, 171, 28));
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -110,13 +116,30 @@ public:
         menuSave = new QMenu(menubar);
         menuSave->setObjectName("menuSave");
         MainWindow->setMenuBar(menubar);
-        statusbar = new QStatusBar(MainWindow);
-        statusbar->setObjectName("statusbar");
-        MainWindow->setStatusBar(statusbar);
+        toolBar = new QToolBar(MainWindow);
+        toolBar->setObjectName("toolBar");
+        MainWindow->addToolBar(Qt::TopToolBarArea, toolBar);
+        statusBar = new QStatusBar(MainWindow);
+        statusBar->setObjectName("statusBar");
+        MainWindow->setStatusBar(statusBar);
+        dockWidget = new QDockWidget(MainWindow);
+        dockWidget->setObjectName("dockWidget");
+        dockWidget->setFloating(true);
+        dockWidget->setFeatures(QDockWidget::DockWidgetFeature::DockWidgetFloatable|QDockWidget::DockWidgetFeature::DockWidgetMovable|QDockWidget::DockWidgetFeature::DockWidgetVerticalTitleBar);
+        dockWidget->setAllowedAreas(Qt::DockWidgetArea::AllDockWidgetAreas);
+        dockWidgetContents = new QWidget();
+        dockWidgetContents->setObjectName("dockWidgetContents");
+        pushButton_8 = new QPushButton(dockWidgetContents);
+        pushButton_8->setObjectName("pushButton_8");
+        pushButton_8->setGeometry(QRect(140, 10, 92, 28));
+        dockWidget->setWidget(dockWidgetContents);
+        MainWindow->addDockWidget(Qt::TopDockWidgetArea, dockWidget);
 
         menubar->addAction(menuSave->menuAction());
         menuSave->addAction(save_action);
         menuSave->addAction(delete_action);
+        toolBar->addAction(save_action);
+        toolBar->addAction(delete_action);
 
         retranslateUi(MainWindow);
 
@@ -148,6 +171,9 @@ public:
         pushButton_7->setText(QCoreApplication::translate("MainWindow", "QInputDialog", nullptr));
         showQProDiaBtn->setText(QCoreApplication::translate("MainWindow", "showQProessDialog", nullptr));
         menuSave->setTitle(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        toolBar->setWindowTitle(QCoreApplication::translate("MainWindow", "toolBar", nullptr));
+        dockWidget->setWindowTitle(QCoreApplication::translate("MainWindow", "\350\277\231\346\230\257\344\270\200\344\270\252\345\201\234\351\235\240\347\252\227\345\217\243", nullptr));
+        pushButton_8->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
     } // retranslateUi
 
 };
