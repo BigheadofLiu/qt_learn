@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-007be410302a5912393b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Qt_Demo_04_Qvariant",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Qt_Demo_04_Qvariant::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qt_Demo_04_Qvariant-Debug-09038f0d2eb8aa8a71b4.json",
+					"name" : "Qt_Demo_04_Qvariant",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Qt_Demo_04_Qvariant_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qt_Demo_04_Qvariant_autogen-Debug-3b45e68b7db273078db9.json",
+					"name" : "Qt_Demo_04_Qvariant_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Qt_Demo_04_Qvariant_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Qt_Demo_04_Qvariant_autogen_timestamp_deps-Debug-687894789768c97fdcf3.json",
+					"name" : "Qt_Demo_04_Qvariant_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/Demo/Cpp/QT/QT_Demo_04_Qvariant/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug",
+		"source" : "E:/Demo/Cpp/QT/QT\u57fa\u7840/Qt_Demo_04_Qvariant"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
