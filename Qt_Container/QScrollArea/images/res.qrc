@@ -1,0 +1,23 @@
+<RCC>
+    <qresource prefix="/">
+        <file alias="1">像素_树.png</file>
+        <file alias="2">像素_药水.png</file>
+        <file alias="3">像素-红蘑菇.png</file>
+        <file alias="4">像素-红鹦鹉.png</file>
+        <file alias="5">像素-黄鹦鹉.png</file>
+        <file alias="6">像素-火苗.png</file>
+        <file alias="7">像素-火焰.png</file>
+        <file alias="8">像素-咖啡.png</file>
+        <file alias="9">像素-绿蘑菇.png</file>
+        <file alias="10">像素-马里奥.png</file>
+        <file alias="11">像素-喜欢.png</file>
+        <file>选择.png</file>
+        <file>保存.png</file>
+        <file>海贼王.jpg</file>
+        <file>删除.png</file>
+        <file>索隆_1.jpg</file>
+        <file>下载_索隆.jpg</file>
+        <file>像素_猫.png</file>
+        <file>像素_旗帜.png</file>
+    </qresource>
+</RCC>

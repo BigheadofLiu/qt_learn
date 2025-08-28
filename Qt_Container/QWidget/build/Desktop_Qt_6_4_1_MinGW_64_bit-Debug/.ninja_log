@@ -1,0 +1,21 @@
+# ninja log v6
+22	619	7779090574879612	QWidget_autogen/timestamp	cbf16474139671b9
+1386	3583	7779012201177791	CMakeFiles/QWidget.dir/QWidget_autogen/mocs_compilation.cpp.obj	3cd767339dbbf3fe
+22	619	7779090574879612	QWidget_autogen/mocs_compilation.cpp	cbf16474139671b9
+22	619	7779090574879612	E:/Demo/Cpp/QT/Qt_Container/QWidget/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/QWidget_autogen/timestamp	cbf16474139671b9
+2579	3045	7779090600443880	QWidget.exe	665de053887447ed
+620	2579	7779090580858365	CMakeFiles/QWidget.dir/mainwindow.cpp.obj	19779216c4e2f90d
+22	619	7779090574879612	E:/Demo/Cpp/QT/Qt_Container/QWidget/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/QWidget_autogen/mocs_compilation.cpp	cbf16474139671b9
+1422	3654	7779012201532214	CMakeFiles/QWidget.dir/main.cpp.obj	30ed8a8bf37fbf29
+26	624	7779090690855411	QWidget_autogen/timestamp	cbf16474139671b9
+26	624	7779090690855411	QWidget_autogen/mocs_compilation.cpp	cbf16474139671b9
+26	624	7779090690855411	E:/Demo/Cpp/QT/Qt_Container/QWidget/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/QWidget_autogen/timestamp	cbf16474139671b9
+26	624	7779090690855411	E:/Demo/Cpp/QT/Qt_Container/QWidget/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/QWidget_autogen/mocs_compilation.cpp	cbf16474139671b9
+625	2845	7779090696851688	CMakeFiles/QWidget.dir/mainwindow.cpp.obj	19779216c4e2f90d
+2845	3268	7779090719047102	QWidget.exe	665de053887447ed
+26	606	7779091040003749	QWidget_autogen/timestamp	cbf16474139671b9
+26	606	7779091040003749	QWidget_autogen/mocs_compilation.cpp	cbf16474139671b9
+26	606	7779091040003749	E:/Demo/Cpp/QT/Qt_Container/QWidget/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/QWidget_autogen/timestamp	cbf16474139671b9
+26	606	7779091040003749	E:/Demo/Cpp/QT/Qt_Container/QWidget/build/Desktop_Qt_6_4_1_MinGW_64_bit-Debug/QWidget_autogen/mocs_compilation.cpp	cbf16474139671b9
+609	2588	7779091045827303	CMakeFiles/QWidget.dir/mainwindow.cpp.obj	19779216c4e2f90d
+2588	3002	7779091065619372	QWidget.exe	665de053887447ed
