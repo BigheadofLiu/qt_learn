@@ -73,6 +73,26 @@ MainWindow::MainWindow(QWidget *parent)
             ui->heapList->addItem(QString::number(i));
         }
     });
+
+    //线程的销毁
+    connect(this,&MainWindow::destroy,this,[=](){
+        t1->quit();
+        t1->wait();
+        t1->deleteLater();
+
+        t2->quit();
+        t2->wait();
+        t2->deleteLater();
+
+        t3->quit();
+        t3->wait();
+        t3->deleteLater();
+
+        createRandom->deleteLater();
+        bubble->deleteLater();
+        quick->deleteLater();
+        heap->deleteLater();
+    });
 }
 
 MainWindow::~MainWindow()
@@ -92,4 +112,10 @@ void MainWindow::on_startBtn_clicked()
 }
 #endif
 
+
+
+void MainWindow::on_startBtn_clicked()
+{
+
+}
 

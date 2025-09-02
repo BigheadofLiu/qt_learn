@@ -59,6 +59,27 @@ MainWindow::MainWindow(QWidget *parent)
             ui->heapList->addItem(QString::number(i));
         }
     });
+
+    //线程销毁
+    connect(this,&MainWindow::destroyed,this,[=](){
+        createRandom->quit();
+        createRandom->wait();
+
+        bubble->quit();
+        bubble->wait();
+
+        quick->quit();
+        quick->wait();
+
+        heap->quit();
+        heap->wait();
+
+        createRandom->deleteLater();
+        bubble->deleteLater();
+        quick->deleteLater();
+        heap->deleteLater();
+
+    });
 }
 
 MainWindow::~MainWindow()
@@ -67,6 +88,9 @@ MainWindow::~MainWindow()
 
 }
 
+void MainWindow::on_startBtn_clicked(){
+
+}
 #if 0
 void MainWindow::on_startBtn_clicked()
 {
