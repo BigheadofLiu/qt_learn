@@ -1,6 +1,8 @@
+#
 .idea/
 .qtcreator
 
+#
 Clone/
 build/
 cmake-build-debug/
