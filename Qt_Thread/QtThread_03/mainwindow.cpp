@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
 
         //bubble 开始之前 需要设置mList
         // t2->start();
-        QThreadPool::globalInstance()->start(quick);
+        QThreadPool::globalInstance()->start(bubble);
     });
     connect(bubble,&bubbleSort::sendVector,this,[=](QVector<int> list){
         ui->bubbList->clear();
@@ -58,7 +58,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(createRandom,&createRandNum::sendVector,quick,&quickSort::recvVector);
     connect(ui->startQuickBtn,&QPushButton::clicked,[=](){
         // t3->start();
-         QThreadPool::globalInstance()->start(createRandom);
+         QThreadPool::globalInstance()->start(quick);
     });
     connect(quick,&quickSort::sendVector,this,[=](QVector<int> list){
         ui->quickList->clear();
