@@ -14,6 +14,7 @@ public:
     explicit myButton(QWidget *parent = nullptr);
 
 signals:
+    void click();  //自定义信号
 protected:
     void mousePressEvent(QMouseEvent* e) override;  //重写父类QWidget的方法
     void mouseReleaseEvent(QMouseEvent* e) override;

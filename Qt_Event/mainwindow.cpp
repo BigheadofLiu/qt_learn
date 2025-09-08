@@ -7,6 +7,22 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    // connect(ui->myBtn,&myButton::click,[=](){
+    //     QMessageBox::information(this,"tips","你不要碰我！");
+    // });
+    setWindowFlags(windowFlags()|Qt::FramelessWindowHint); //设置无边框
+    setAttribute(Qt::WA_TranslucentBackground); //设置透明背景
+    showMaximized(); //窗口最大化
+
+
+    //生成多只蝴蝶
+    for(int i=0;i<100;++i){
+        butterFly* butter=new butterFly(this);
+        // butter->move((width()-butter->width())/2,(height()-butter->height())/2);
+        //位置随机生成
+        butter->move(QRandomGenerator::global()->bounded(this->width()),QRandomGenerator::global()->bounded(this->height()));
+        butter->show();
+    }
 }
 
 MainWindow::~MainWindow()

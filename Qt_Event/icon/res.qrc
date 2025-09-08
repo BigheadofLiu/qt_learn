@@ -16,5 +16,9 @@
         <file>像素-马里奥.png</file>
         <file>像素-喜欢.png</file>
         <file>选择.png</file>
+        <file>down(1).png</file>
+        <file alias="2">down.png</file>
+        <file>up(1).png</file>
+        <file alias="1">up.png</file>
     </qresource>
 </RCC>

@@ -6,6 +6,8 @@
 #include <QResizeEvent>
 #include <QMessageBox>
 #include "mybutton.h"
+#include "butterfly.h"
+#include <QRandomGenerator>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {

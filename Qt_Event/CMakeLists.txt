@@ -25,6 +25,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         mybutton.h mybutton.cpp
         icon/res.qrc
+        butterfly.h butterfly.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Qt_Event APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
