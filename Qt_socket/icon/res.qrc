@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>未连接.png</file>
+        <file>已连接.png</file>
+    </qresource>
+</RCC>
