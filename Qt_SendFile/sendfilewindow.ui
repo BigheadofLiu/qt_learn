@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>309</width>
-    <height>388</height>
+    <width>276</width>
+    <height>402</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -28,19 +28,6 @@
        <item>
         <widget class="QLineEdit" name="ipLineEdit"/>
        </item>
-       <item>
-        <spacer name="horizontalSpacer_4">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>77</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
     </item>
@@ -57,19 +44,6 @@
        <item>
         <widget class="QLineEdit" name="portLineEdit"/>
        </item>
-       <item>
-        <spacer name="horizontalSpacer_6">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>69</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
     </item>
@@ -85,19 +59,6 @@
        </item>
        <item>
         <widget class="QLineEdit" name="filePathlineEdit"/>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_7">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>33</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>
@@ -126,19 +87,6 @@
      <widget class="QWidget" name="widget_6" native="true">
       <layout class="QHBoxLayout" name="horizontalLayout_6">
        <item>
-        <spacer name="horizontalSpacer_3">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
         <widget class="QPushButton" name="connectBtn">
          <property name="text">
           <string>连接服务器</string>
@@ -151,19 +99,6 @@
           <string>断开服务器</string>
          </property>
         </widget>
-       </item>
-       <item>
-        <spacer name="horizontalSpacer_5">
-         <property name="orientation">
-          <enum>Qt::Orientation::Horizontal</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
        </item>
       </layout>
      </widget>
@@ -178,7 +113,7 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>83</width>
+           <width>66</width>
            <height>20</height>
           </size>
          </property>
@@ -198,7 +133,7 @@
          </property>
          <property name="sizeHint" stdset="0">
           <size>
-           <width>82</width>
+           <width>66</width>
            <height>20</height>
           </size>
          </property>
@@ -214,7 +149,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>309</width>
+     <width>276</width>
      <height>24</height>
     </rect>
    </property>
