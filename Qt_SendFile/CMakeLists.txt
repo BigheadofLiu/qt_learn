@@ -26,6 +26,10 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ${PROJECT_SOURCES}
         sendfile.h sendfile.cpp
 
+        recvfile.h recvfile.cpp
+        recvfilewindow.h recvfilewindow.cpp recvfilewindow.ui
+
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET Qt_SendFile APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

@@ -8,6 +8,7 @@ sendFileWindow::sendFileWindow(QWidget *parent)
 {
     //界面初始化
     ui->setupUi(this);
+    this->setWindowTitle("客户端");
     ui->ipLineEdit->setText("localhost");
     ui->portLineEdit->setText("8899");
     ui->progressBar->setRange(0,100);
@@ -35,8 +36,8 @@ sendFileWindow::sendFileWindow(QWidget *parent)
         send->deleteLater();
         t1->deleteLater();
     });
-    connect(send,&sendFile::curPercent,ui->progressBar,&QProgressBar::value);
-    connect(this,&sendFileWindow::sendFilePath,send,&sendFile::fileSend);
+    connect(send,&sendFile::curPercent,ui->progressBar,&QProgressBar::value); //进度条刷新
+    connect(this,&sendFileWindow::sendFilePath,send,&sendFile::fileSend);   //发送文件目录
 }
 
 sendFileWindow::~sendFileWindow()
@@ -44,9 +45,9 @@ sendFileWindow::~sendFileWindow()
     delete ui;
 }
 
-void sendFileWindow::on_choseFileBtn_clicked()
+void sendFileWindow::on_choseFileBtn_clicked() //选择文件目录
 {
-    QString filepath =QFileDialog::getOpenFileName();
+    QString filepath =QFileDialog::getOpenFileName(); //固定用法
     if(filepath.isEmpty()){
         QMessageBox::warning(this,"Tips","未选择文件或非法空路径！");
         return;

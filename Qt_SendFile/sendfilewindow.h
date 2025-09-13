@@ -5,6 +5,8 @@
 #include <QThread>
 #include <QFileDialog>
 #include <QErrorMessage>
+#include <QTcpServer>
+#include "recvfile.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
