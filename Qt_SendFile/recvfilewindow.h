@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "recvfile.h"
+#include <QMessageBox>
 
 namespace Ui {
 class recvFileWindow;
@@ -15,7 +16,8 @@ class recvFileWindow : public QMainWindow
 public:
     explicit recvFileWindow(QWidget *parent = nullptr);
     ~recvFileWindow();
-
+signals:
+    void sendTcpsocket(QTcpSocket* client);
 private slots:
     void on_startListenBtn_clicked();
 

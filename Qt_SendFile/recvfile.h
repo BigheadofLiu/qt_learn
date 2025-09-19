@@ -5,6 +5,7 @@
 #include <QThread>
 #include <QTcpServer>
 #include <QTcpSocket>
+#include <QFile>
 
 class recvFile : public QThread
 {
@@ -14,7 +15,7 @@ public:
 public slots:
     void setTcpSocket(QTcpSocket* client);
 signals:
-
+    void sendOver();
 protected:
     void run() override;
 private:

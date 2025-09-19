@@ -6,6 +6,7 @@ sendFileWindow::sendFileWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::sendFileWindow)
 {
+    //客户端界面
     //界面初始化
     ui->setupUi(this);
     this->setWindowTitle("客户端");
@@ -15,7 +16,7 @@ sendFileWindow::sendFileWindow(QWidget *parent)
     ui->progressBar->setValue(0);
     ui->disconnectBtn->setEnabled(false);
     ui->sendFileBtn->setEnabled(false);
-
+    // ui->connectBtn->setEnabled(true);
     //创建子线程
     QThread* t1=new QThread;
     sendFile * send=new sendFile;
@@ -24,18 +25,27 @@ sendFileWindow::sendFileWindow(QWidget *parent)
     //信号槽绑定
     connect(this,&sendFileWindow::startconnect,send,&sendFile::connectServer);
     t1->start();
-
+    ui->connectBtn->setEnabled(false);
     connect(send,&sendFile::isConnected,[=](){
         QMessageBox::information(this,"Tips","已连接服务器");
+        ui->connectBtn->setEnabled(false);
+        ui->disconnectBtn->setEnabled(true);
+        ui->sendFileBtn->setEnabled(true);
     });
     connect(send,&sendFile::disConnected,this,[=](){
         QMessageBox::information(this,"Tips","已断开连接服务器");
         //释放资源（为啥不交给对象树处理）
+        ui->connectBtn->setEnabled(true);
         t1->quit();
         t1->wait();
         send->deleteLater();
         t1->deleteLater();
+
+        ui->connectBtn->setEnabled(true);
+        ui->disconnectBtn->setEnabled(false);
+        ui->sendFileBtn->setEnabled(false);
     });
+    connect(this,&sendFileWindow::disconnect,send,&sendFile::disConnected);
     connect(send,&sendFile::curPercent,ui->progressBar,&QProgressBar::value); //进度条刷新
     connect(this,&sendFileWindow::sendFilePath,send,&sendFile::fileSend);   //发送文件目录
 }
@@ -66,7 +76,7 @@ void sendFileWindow::on_connectBtn_clicked()
 
 void sendFileWindow::on_disconnectBtn_clicked()
 {
-
+    emit disconnect();
 }
 
 
@@ -75,10 +85,10 @@ void sendFileWindow::on_sendFileBtn_clicked()
     emit sendFilePath(ui->filePathlineEdit->text());
 }
 
-void sendFileWindow::startconnect(QString ip,unsigned short port)
-{
+// void sendFileWindow::startconnect(QString ip,unsigned short port)
+// {
 
-}
+// }
 
 
 

@@ -19,6 +19,7 @@ signals:
     void isConnected();
     void disConnected();
     void curPercent(int percent);
+
 private:
     QTcpSocket* mClient;
 };

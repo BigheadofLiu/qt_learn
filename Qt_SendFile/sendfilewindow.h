@@ -32,9 +32,10 @@ private slots:
 
     void on_sendFileBtn_clicked();
 
-    void startconnect(QString ip,unsigned short port);
 signals:
     void sendFilePath(QString filePath);
+    void startconnect(QString ip,unsigned short port);
+    void disconnect();
 private:
     Ui::sendFileWindow *ui;
 };
