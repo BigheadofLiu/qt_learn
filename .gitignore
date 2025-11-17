@@ -1,8 +1,8 @@
-#
+#file
 .idea/
 .qtcreator
 .txt.user
-#
+#dir
 Clone/
 build/
 cmake-build-debug/
