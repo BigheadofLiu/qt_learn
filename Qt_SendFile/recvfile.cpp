@@ -11,7 +11,7 @@ recvFile::recvFile(qintptr sock,QObject *parent)
 
 void recvFile::setTcpSocket(/*QTcpSocket *client*/)
 {
-    // this->mClient=client;  //这里是获取一个用于通信的文件描述符
+    // this->mClient=client;  //
 
 }
 

@@ -8,8 +8,9 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //继续修改为线程池版本
+    //继承QObject和QRunable的方式
 
-    QThread* t1=new QThread;
+    // QThread* t1=new QThread;
     // QThread* t2=new QThread;
     // QThread* t3=new QThread;
     // QThread* t4=new QThread;

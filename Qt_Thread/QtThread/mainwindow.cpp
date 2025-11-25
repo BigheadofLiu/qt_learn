@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //继承QThread的方式
     //创建子线程（创建随机数）
     createRandNum* createRandom=new createRandNum(this);  //这里带参数与不带参数有啥区别
     connect(this,&MainWindow::setNum,createRandom,&createRandNum::recvNum);  //（先绑定）绑定用于接收主线程设置的随机数生成个数

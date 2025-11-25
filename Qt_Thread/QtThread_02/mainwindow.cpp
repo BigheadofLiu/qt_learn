@@ -17,7 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     quickSort* quick =new quickSort(this);
     heapSort* heap =new heapSort(this);
     //这样改三个排序按钮直接退役了。。。
-    createRandom->moveToThread(t1);
+    createRandom->moveToThread(t1);    //继承QObject的方式
     bubble->moveToThread(t2);
     quick->moveToThread(t3);
     heap->moveToThread(t4);

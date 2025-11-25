@@ -8,7 +8,7 @@
 #include <QDebug>
 
 //用于生成随机数
-class createRandNum : public QObject
+class createRandNum : public QObject    //继承Qobject的方式
 {
     Q_OBJECT
 public:
