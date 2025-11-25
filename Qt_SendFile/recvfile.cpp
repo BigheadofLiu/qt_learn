@@ -1,19 +1,26 @@
 #include "recvfile.h"
 
-recvFile::recvFile(QObject *parent)
+
+recvFile::recvFile(qintptr sock,QObject *parent)
     : QThread{parent}
 {
-
+    this->mSocket=sock;  //获取到的是客户端发送来的通信文件描述符
+    mClient=new QTcpSocket(this);
+    mClient->setSocketDescriptor(mSocket);
 }
 
-void recvFile::setTcpSocket(QTcpSocket *client)
+void recvFile::setTcpSocket(/*QTcpSocket *client*/)
 {
-    this->mClient=client;
+    // this->mClient=client;  //这里是获取一个用于通信的文件描述符
+
 }
 
 void recvFile::run()
 {
     // auto file=std::make_shared<QFile>();
+    // mClient=new QTcpSocket(this);
+    // mClient->setSocketDescriptor(mSocket);
+
     QFile* file=new QFile("recv.txt");
     file->open(QFile::WriteOnly);
 

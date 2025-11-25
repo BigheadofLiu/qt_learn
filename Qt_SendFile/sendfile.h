@@ -19,9 +19,8 @@ signals:
     void isConnected();
     void disConnected();
     void curPercent(int percent);
-
 private:
-    QTcpSocket* mClient;
+    QTcpSocket* mClient=nullptr;
 };
 
 #endif // SENDFILE_H

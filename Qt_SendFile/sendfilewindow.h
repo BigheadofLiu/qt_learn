@@ -7,6 +7,7 @@
 #include <QErrorMessage>
 #include <QTcpServer>
 #include "recvfile.h"
+#include "sendfile.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -38,5 +39,7 @@ signals:
     void disconnect();
 private:
     Ui::sendFileWindow *ui;
+    QThread* mThread=nullptr;
+    sendFile* mSend=nullptr;
 };
 #endif // SENDFILEWINDOW_H

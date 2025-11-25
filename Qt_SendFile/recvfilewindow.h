@@ -21,9 +21,12 @@ signals:
 private slots:
     void on_startListenBtn_clicked();
 
+    void on_endListenBtn_clicked();
+
 private:
     Ui::recvFileWindow *ui;
-    QTcpServer* mServer;
+    // QTcpServer* mServer;
+    myTcpServer* mServer;
 };
 
 #endif // RECVFILEWINDOW_H

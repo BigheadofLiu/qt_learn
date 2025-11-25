@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>367</width>
-    <height>110</height>
+    <height>168</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -38,10 +38,29 @@
        </property>
       </widget>
      </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget_2" native="true">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>70</y>
+      <width>196</width>
+      <height>48</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
      <item>
       <widget class="QPushButton" name="startListenBtn">
        <property name="text">
         <string>开始监听</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="endListenBtn">
+       <property name="text">
+        <string>停止监听</string>
        </property>
       </widget>
      </item>
@@ -54,7 +73,7 @@
      <x>0</x>
      <y>0</y>
      <width>367</width>
-     <height>24</height>
+     <height>29</height>
     </rect>
    </property>
   </widget>

@@ -80,7 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
         }
     });
 
-    //线程的销毁
+    //线程的销毁（由线程池来管理）
     // connect(this,&MainWindow::destroy,this,[=](){
     //     t1->quit();
     //     t1->wait();

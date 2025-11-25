@@ -6,14 +6,15 @@ sendFile::sendFile(QObject *parent)
 
 void sendFile::connectServer(QString ip,unsigned short port)
 {
-    // mClient=new QTcpSocket;
-    mClient->connectToHost(ip,port);
+    mClient=new QTcpSocket();
+
     connect(mClient,&QTcpSocket::connected,this,&sendFile::isConnected);
     connect(mClient,&QTcpSocket::disconnected,this,[=]{
         mClient->close();
         mClient->deleteLater();
         emit disConnected();
     });
+    mClient->connectToHost(QHostAddress(ip),port);
 }
 
 void sendFile::fileSend(QString filePath)

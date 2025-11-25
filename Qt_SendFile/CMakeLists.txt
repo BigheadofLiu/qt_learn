@@ -12,6 +12,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Network) #添加NetWork模块
+find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core)
 
 set(PROJECT_SOURCES
         main.cpp
@@ -28,6 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
 
         recvfile.h recvfile.cpp
         recvfilewindow.h recvfilewindow.cpp recvfilewindow.ui
+        mytcpserver.h mytcpserver.cpp
 
 
     )
@@ -53,6 +55,7 @@ target_link_libraries(
     Qt_SendFile PRIVATE Qt${QT_VERSION_MAJOR}::Widgets
     Qt${QT_VERSION_MAJOR}::Network
 )
+target_link_libraries(Qt_SendFile PRIVATE Qt${QT_VERSION_MAJOR}::Core)
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
