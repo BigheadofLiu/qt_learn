@@ -75,7 +75,7 @@ void MainWindow::readJson()
     if(docObj.isObject()){
         QJsonObject obj=docObj.object();
         qDebug()<<"json文件读取成功！\n";
-        //遍历json这么麻烦。。。
+        //遍历读取json这么麻烦。。。
         for(auto& i:obj.keys()){
             qDebug()<<i<<"-->"<<obj[i]<<"\n";
         }
