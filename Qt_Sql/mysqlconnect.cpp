@@ -13,6 +13,8 @@ bool mysqlConnect::connectToMysql()
     db1.setPort(3306);
     db1.setUserName("db1");
     db1.setPassword("123456");
+    // db1.setDatabaseName("");  //指定数据库
+    db1.setDatabaseName("mytest");
 
     if(!db1.open()){
         qDebug()<<"数据库连接失败！\n";
@@ -28,11 +30,12 @@ void mysqlConnect::testQuery()
         qDebug()<<"数据库未连接\n";
         return;
     }
-    QString sql="show databases";
+    // QString sql="show databases";
+    QString sql="select * from test";
     QSqlQuery query;
     query.exec(sql);
     while(query.next()){
-         qDebug()<<query.value(0).toString();
+         qDebug()<<query.value(0).toString()<<query.value(1).toString()<<query.value(2).toString();
     }
 }
 
