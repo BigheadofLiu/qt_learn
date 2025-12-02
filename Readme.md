@@ -1,0 +1,60 @@
+
+##### Qt连接mysql记录
+###### 测试环境：mac使VMware Fusion虚拟机 ubuntu 25.10+Qt 6.9.3+mysql 8.4.7 
+<img src="./shotimg/dffd5164-5e1c-47e6-b199-82d1ed6397fa.png" width="200">
+<img src="./shotimg/81278272-5be7-4a0d-8631-457cd23c08f0.png" width="283">
+
+<img src="./shotimg/45e3c4ec-334f-4d18-9534-70b8906081a4.png" width="300">
+
+>1.准备工作
+
+###### 太麻烦 不写了 下次一定。。。
+
+##### Qt应用打包与发布
+1.下载工具
+下载linux平台打包工具linuxdeployqt：https://github.com/probonopd/linuxdeployqt/releases
+下载之后赋予执行全权限：
+
+```bash
+chmod +x linuxdeployqt-continuous-aarch64.AppImage
+./linuxdeployqt-continuous-aarch64.AppImage
+#如果提示ubuntu版本太新 需要绕过glibc检查
+APPIMAGE_EXTRACT_AND_RUN=1 ./linuxdeployqt-continuous-aarch64.AppImage \
+    -unsupported-allow-new-glibc \
+    --version
+#结果输出为以下结果，表示解包完成已可用
+linuxdeployqt (commit ), build 107 built on 2025-10-21 17:58:03 UTC
+#把解包得到的linuxdeployqt-continuous-aarch64.AppImage 加入环境变量方便后续使用
+#确认命令可用
+wdnmd@wdnmd-VMware20-1:~/桌面$ linuxdeployqt --version
+linuxdeployqt  (commit ), build 107 built on 2025-10-21 17:58:03 UTC
+
+#新建一个项目文件夹，进入需要打包的项目build/release目录，把里面的项目文件拷贝至新建的文件夹
+#在新建的文件夹打开终端
+#首先修改desktop.default不然会报错
+sudo nano default.desktop
+#修改为以下
+[Desktop Entry]
+Type=Application
+Name=Qt_Event
+Comment=My Qt Application
+Exec=Qt_Event
+Icon=default
+Terminal=false
+Categories=Utility;
+
+#执行打包命令
+APPIMAGE_EXTRACT_AND_RUN=1 linuxdeployqt Qt_Event \
+    -qmake=/home/wdnmd/Qt/6.9.3/gcc_arm64/bin/qmake \  #修改为自己的qmake路径
+    -unsupported-allow-new-glibc \
+    -appimage
+
+#打包完成会出现项目名.AppImage的文件 赋予执行权限后可正常运行
+```
+###### 未完待续。。。
+
+
+
+
+
+
