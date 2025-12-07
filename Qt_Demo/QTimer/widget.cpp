@@ -21,19 +21,35 @@ Widget::Widget(QWidget *parent)
     mPicNum=2;
     mTimer=new QTimer(this);
 
-    connect(mTimer,&QTimer::timeout,[this](){
-        QString partPath=":/%1.jpg";
-        QString filePath=partPath.arg(mPicNum);
-        QImage pic;
-        pic.load(filePath);
-        ui->picLabel->setPixmap(QPixmap::fromImage(pic));
-        mPicNum++;
-        // qDebug()<<filePath<<" "<<mPicNum;
-        if(mPicNum>5){
-            mPicNum=1;
-        }
-    });
+    //循环监听
+    // connect(mTimer,&QTimer::timeout,[this](){
+    //     QString partPath=":/%1.jpg";
+    //     QString filePath=partPath.arg(mPicNum);
+    //     QImage pic;
+    //     pic.load(filePath);
+    //     ui->picLabel->setPixmap(QPixmap::fromImage(pic));
+    //     mPicNum++;
+    //     // qDebug()<<filePath<<" "<<mPicNum;
+    //     if(mPicNum>5){
+    //         mPicNum=1;
+    //     }
+    // });
 
+    //单次监听
+    connect(ui->startBtn,&QPushButton::clicked,[this](){
+        QTimer::singleShot(0,this,[this](){
+            QString partPath=":/%1.jpg";
+            QString filePath=partPath.arg(mPicNum);
+            QImage pic;
+            pic.load(filePath);
+            ui->picLabel->setPixmap(QPixmap::fromImage(pic));
+            mPicNum++;
+            // qDebug()<<filePath<<" "<<mPicNum;
+            if(mPicNum>5){
+                mPicNum=1;
+            }
+        });
+    });
     connect(ui->startBtn,&QPushButton::clicked,[this](){
         if(!mTimer->isActive()){
             emit mTimer->start(1000);
