@@ -25,7 +25,6 @@ myTcpServer::myTcpServer(QWidget *parent)
             });
         });
 
-
     });
 
     connect(ui->endLisBtn,&QPushButton::clicked,[this](){
