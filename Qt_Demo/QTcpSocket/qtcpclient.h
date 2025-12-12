@@ -18,6 +18,11 @@ public:
     QTcpClient(QWidget *parent = nullptr);
     ~QTcpClient();
 
+private slots:
+    void on_sendMsgBtn_clicked();
+
+    void on_clearBtn_clicked();
+
 private:
     Ui::QTcpClient *ui;
     QTcpSocket* mClient;
