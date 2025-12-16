@@ -10,11 +10,11 @@ MainWindow::MainWindow(QWidget *parent)
     this->setWindowTitle("查询");
     // mDatabase->addDatabase("QMYSQL"); //error
     mDatabase=QSqlDatabase::addDatabase("QMYSQL");  //指定数据库类型
-    mDatabase.setHostName("127.0.0.1");
-    mDatabase.setPort(3306);
-    mDatabase.setUserName("db1");
-    mDatabase.setPassword("123456");
-    mDatabase.setDatabaseName("mytest");
+    mDatabase.setHostName("127.0.0.1");  //ip
+    mDatabase.setPort(3306);        //端口
+    mDatabase.setUserName("db1");    //指定登录名
+    mDatabase.setPassword("123456");  //密码
+    mDatabase.setDatabaseName("mytest");  //数据库名
 
     if(!mDatabase.open()){
         QMessageBox::information(this,"error","数据库连接失败，请检查数据库连接状态！");
@@ -46,6 +46,7 @@ void MainWindow::on_searchBtn_clicked()
     QString sql="select * from mytest_stu";
 
     if(!id.isEmpty() || !name.isEmpty() || !age.isEmpty()){
+        //根据条件拼接sql
         sql += " WHERE ";
 
         bool firstCondition = true;
