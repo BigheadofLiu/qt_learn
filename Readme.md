@@ -2,7 +2,7 @@
 #### 记录小白学习qt的过程
 > 吐槽一下Qt相关教程和实战教程真的太少了 而且质量都很一般
 
-目录说明
+目录说明  
 qtBest:【QT快速入门 | 最简单最简洁的QT入门教程 | 嵌入式UI】 https://www.bilibili.com/video/BV1N34y1H7x7/?share_source=copy_web&vd_source=6af53dca693e6d5496c6a5fed45a4663
 
 qtDabing：【Qt开发编程-入门基础教程Qt5】 https://www.bilibili.com/video/BV1Jp4y167R9/?share_source=copy_web&vd_source=6af53dca693e6d5496c6a5fed45a4663
@@ -17,7 +17,7 @@ qtChuanzhi:【最新QT从入门到实战完整版|传智教育】 https://www.bi
 
 >1.准备工作
 
-###### 太麻烦 不写了 下次一定。。。
+###### 太麻烦 不写了 下次一定
 
 ##### Qt应用打包与发布
 1.下载工具
