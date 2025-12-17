@@ -1,4 +1,13 @@
 
+#### 记录小白学习qt的过程
+> 吐槽一下Qt相关教程和实战教程真的太少了 而且质量都很一般
+
+目录说明
+qtBest:【QT快速入门 | 最简单最简洁的QT入门教程 | 嵌入式UI】 https://www.bilibili.com/video/BV1N34y1H7x7/?share_source=copy_web&vd_source=6af53dca693e6d5496c6a5fed45a4663
+
+qtDabing：【Qt开发编程-入门基础教程Qt5】 https://www.bilibili.com/video/BV1Jp4y167R9/?share_source=copy_web&vd_source=6af53dca693e6d5496c6a5fed45a4663
+
+qtChuanzhi:【最新QT从入门到实战完整版|传智教育】 https://www.bilibili.com/video/BV1g4411H78N/?share_source=copy_web&vd_source=6af53dca693e6d5496c6a5fed45a4663
 ##### Qt连接mysql记录
 ###### 测试环境：mac使VMware Fusion虚拟机 ubuntu 25.10+Qt 6.9.3+mysql 8.4.7 
 <img src="./shotimg/dffd5164-5e1c-47e6-b199-82d1ed6397fa.png" width="200">
@@ -51,7 +60,7 @@ APPIMAGE_EXTRACT_AND_RUN=1 linuxdeployqt Qt_Event \
 
 #打包完成会出现项目名.AppImage的文件 赋予执行权限后可正常运行
 ```
-###### 未完待续。。。
+###### 未完待续
 
 
 
