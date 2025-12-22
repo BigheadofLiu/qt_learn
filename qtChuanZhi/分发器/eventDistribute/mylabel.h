@@ -28,6 +28,7 @@ protected:
     void leaveEvent(QEvent *event) override;
 
     bool event(QEvent *e) override;
+    bool eventFilter(QObject *obj, QEvent *event) override;
 private:
     Ui::MyLabel *ui;
 };

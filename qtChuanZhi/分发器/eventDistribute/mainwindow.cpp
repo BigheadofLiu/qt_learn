@@ -6,7 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    //事件分发器
 
+    //事件过滤器
 }
 
 MainWindow::~MainWindow()

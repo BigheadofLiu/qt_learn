@@ -7,6 +7,10 @@ MyLabel::MyLabel(QWidget *parent)
 {
     ui->setupUi(this);
     setMouseTracking(true); //设置鼠标追踪
+
+    //安装过滤器
+    // ui->installEventFilter(this);  error
+    this->installEventFilter(this);   //自己给自己安装过滤器 有点脱裤子放屁。。 仅用于演示
 }
 
 MyLabel::~MyLabel()
@@ -52,8 +56,22 @@ bool MyLabel::event(QEvent *e)   //自定义事件分发
             return QLabel::event(ev);  //鼠标右键向下分发
         }
     }
-
-
     return QLabel::event(e); //交给父类处理 向下分发
+}
+
+//重写 事件过滤器
+bool MyLabel::eventFilter(QObject *obj, QEvent *event)
+{
+    if(obj==this && event->type()==QEvent::MouseButtonPress ){
+        QMouseEvent* ev=static_cast<QMouseEvent*>(event);  //类型转换
+        if(ev->button()==Qt::LeftButton){
+            qDebug()<<"过滤器："<<"鼠标左键按下";
+            return true;   //左键按下进行拦截
+        }else{
+            return false; //鼠标右键不做拦截
+        }
+    }
+    return false;
+    //其他事件不做处理
 }
 
