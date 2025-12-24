@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainScene</class>
- <widget class="QMainWindow" name="MainScene">
+ <class>SelectLevelScene</class>
+ <widget class="QMainWindow" name="SelectLevelScene">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainScene</string>
+   <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
@@ -23,23 +23,24 @@
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="startMenu">
+   <widget class="QMenu" name="menu">
     <property name="title">
      <string>菜单</string>
     </property>
     <addaction name="startAct"/>
-    <addaction name="quitAct"/>
+    <addaction name="exitAct"/>
    </widget>
-   <addaction name="startMenu"/>
+   <addaction name="menu"/>
   </widget>
-  <action name="quitAct">
-   <property name="text">
-    <string>退出</string>
-   </property>
-  </action>
+  <widget class="QStatusBar" name="statusbar"/>
   <action name="startAct">
    <property name="text">
     <string>开始</string>
+   </property>
+  </action>
+  <action name="exitAct">
+   <property name="text">
+    <string>退出</string>
    </property>
   </action>
  </widget>
