@@ -31,23 +31,27 @@ PlayScene::PlayScene(int level):ui(new Ui::PlayScene)
     MyPushBtn* backBtn=new MyPushBtn(":/res/BackButton.png",":/res/BackButtonSelected.png");
     backBtn->setParent(this);
     backBtn->move(this->width()*0.5-backBtn->width()*0.5,this->height()*0.90);
+
     //返回按钮点击事件
     connect(backBtn,&MyPushBtn::clicked,this,[=](){
-        QTimer* timer=new QTimer(this);
-        timer->setSingleShot(true);
-        timer->start(500);
-
-        connect(timer,&QTimer::timeout,[=](){
-            // backBtn->myZoom1();
-            // backBtn->myZoom2();    写了鼠标事件就不写这个了
+        //不推荐会出现一堆野指针(自作聪明了。。）
+        // QTimer* timer=new QTimer(this);
+        // timer->setSingleShot(true);
+        // timer->start(500);
+        // connect(timer,&QTimer::timeout,this,[=](){
+        //     // backBtn->myZoom1();
+        //     // backBtn->myZoom2();    写了鼠标事件就不写这个了
+        //     this->hide();
+        //     emit this->playSceneBack();   //  发射返回信号
+        // });
+        QTimer::singleShot(500,this,[=]{
             this->hide();
-            emit this->playSceneBack();   //  发射返回信号
+            emit this->playSceneBack();
         });
     });
 
     //创建金币背景
     //创建金币的背景图片
-
     for(int i = 0 ; i < 4;i++)
     {
         for(int j = 0 ; j < 4; j++)
@@ -65,6 +69,11 @@ PlayScene::PlayScene(int level):ui(new Ui::PlayScene)
             label->setParent(this);
             label->move(140 + i*50,300+j*50);
             // 120 + (i%4)*70 , 260+ (i/4)*70
+
+            //金币对象创建
+            MyCoin * coin = new MyCoin(":/res/Coin0001.png");
+            coin->setParent(this);
+            coin->move(140 + i*50,300+j*50);
         }
     }
 }

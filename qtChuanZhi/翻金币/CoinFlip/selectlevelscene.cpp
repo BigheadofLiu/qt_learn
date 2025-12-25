@@ -17,19 +17,23 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
 
     //返回按钮点击事件
     connect(backBtn,&MyPushBtn::clicked,this,[=](){
-        QTimer* timer=new QTimer(this);
-        timer->setSingleShot(true);
-        timer->start(500);
+        // QTimer* timer=new QTimer(this);
+        // timer->setSingleShot(true);
+        // timer->start(500);
 
-        connect(timer,&QTimer::timeout,[=](){
-            // backBtn->myZoom1();
-            // backBtn->myZoom2();    写了鼠标事件就不写这个了
+        // connect(timer,&QTimer::timeout,[=](){
+        //     // backBtn->myZoom1();
+        //     // backBtn->myZoom2();    写了鼠标事件就不写这个了
+        //     this->hide();
+        //     emit this->selectSceneBack();   //  发射返回信号
+        // });
+
+        QTimer::singleShot(500,this,[=](){
             this->hide();
-            emit this->selectSceneBack();   //  发射返回信号
+            emit this->selectSceneBack();
         });
-    });
 
-    connect(ui->exitAct,&QAction::triggered,[=](){
+    connect(ui->exitAct,&QAction::triggered,this,[=](){
         this->close();
     });
 
@@ -59,34 +63,32 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
                 levelBtn->myZoom1();
                 levelBtn->myZoom2();
 
-                QTimer* timer=new QTimer(this);
-                timer->setSingleShot(true);
-                timer->start(500);
+                // QTimer* timer=new QTimer(this);
+                // timer->setSingleShot(true);
+                // timer->start(500);
 
+                // connect(timer,&QTimer::timeout,this,[=](){
+                //     // mPlayScene=new PlayScene(this);
+                //     mPlayScene=new PlayScene(i+1);
+                //     // mPlayScene->setParent(this);  //这里不能设置 否则会一起隐藏
+                //     this->hide();
+                //     mPlayScene->show();
+                // });
+                QTimer::singleShot(500,this,[=](){
+                        this->mPlayScene=new PlayScene(i+1);
+                        this->hide();
+                        this->mPlayScene->show();
 
-                connect(timer,&QTimer::timeout,this,[=](){
-                    // mPlayScene=new PlayScene(this);
-                    mPlayScene=new PlayScene(i+1);
-                    // mPlayScene->setParent(this);  //这里不能设置 否则会一起隐藏
-                    this->hide();
-                    mPlayScene->show();
-
-
-                    connect(mPlayScene,&PlayScene::playSceneBack,[=](){
-                        this->show();
-                        delete mPlayScene;
-                        mPlayScene=nullptr;
-                    });
+                        connect(mPlayScene,&PlayScene::playSceneBack,this,[=](){
+                            mPlayScene->deleteLater();
+                            mPlayScene=NULL;
+                            this->show();
+                        });
                 });
-
-                // this->hide()
-
-                // mPlayScene->show();
             }
         });
-    }
-
-
+     }
+});
 }
 
 SelectLevelScene::~SelectLevelScene()

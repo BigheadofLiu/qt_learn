@@ -1,22 +1,24 @@
-#ifndef MYICON_H
-#define MYICON_H
+#ifndef MYCOIN_H
+#define MYCOIN_H
 
 #include <QWidget>
+#include <QPushButton>
 
 namespace Ui {
-class MyIcon;
+class MyCoin;
 }
 
-class MyIcon : public QWidget
+class MyCoin : public QPushButton
 {
     Q_OBJECT
 
 public:
-    explicit MyIcon(QWidget *parent = nullptr);
-    ~MyIcon();
-
+    explicit MyCoin(QWidget *parent = nullptr);
+    ~MyCoin();
+    MyCoin(QString btnImg);
 private:
-    Ui::MyIcon *ui;
+    Ui::MyCoin *ui;
+    QString mBtnImg;
 };
 
-#endif // MYICON_H
+#endif // MYCOIN_H

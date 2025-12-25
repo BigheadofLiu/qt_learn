@@ -9,6 +9,7 @@
 #include <QLabel>
 
 #include "mypushbtn.h"
+#include "mycoin.h"
 
 namespace Ui {
 class PlayScene;
