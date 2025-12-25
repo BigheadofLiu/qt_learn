@@ -14,7 +14,7 @@ class MyPushBtn : public QPushButton
     Q_OBJECT
 public:
     explicit MyPushBtn(QWidget *parent = nullptr);
-    MyPushBtn(QString NormalImgPath,QString PressedImgPath="");
+    MyPushBtn(QString NormalImgPath,QString PressedImgPath=""/*,QWidget *parent = nullptr*/);
     void myZoom1();
     void myZoom2();
     void mousePressEvent(QMouseEvent *e) override;

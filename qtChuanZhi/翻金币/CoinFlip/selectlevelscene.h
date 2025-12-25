@@ -4,8 +4,10 @@
 #include <QMainWindow>
 #include <QPainter>
 #include <QTimer>
+#include <QLabel>
 
 #include "mypushbtn.h"
+#include "playscene.h"
 
 namespace Ui {
 class SelectLevelScene;
@@ -23,6 +25,7 @@ signals:
     void selectSceneBack();
 private:
     Ui::SelectLevelScene *ui;
+    PlayScene* mPlayScene=nullptr;
 };
 
 #endif // SELECTLEVELSCENE_H

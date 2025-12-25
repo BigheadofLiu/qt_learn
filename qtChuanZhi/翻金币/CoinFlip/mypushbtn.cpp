@@ -6,16 +6,19 @@ MyPushBtn::MyPushBtn(QWidget *parent)
 
 }
 
-MyPushBtn::MyPushBtn(QString normalImgPath, QString pressedImgPath)
+MyPushBtn::MyPushBtn(QString normalImgPath, QString pressedImgPath/*,QWidget* parent*/)
 {
     mNormalImgPath=normalImgPath;
     mPressedImgPath=pressedImgPath;
-
+    // setParent(parent);
     QPixmap pix;
-    if(!pix.load(normalImgPath)){
-        qDebug()<<"图片加载失败";
+    if(!pix.load(mNormalImgPath)){
+        // qDebug()<<"图片加载失败";
+        return;
     }
+    // this->resize(pix.size());  //方便外部修改大小 没啥卵用
     this->setFixedSize(pix.size());  //使图片完全覆盖
+
     this->setStyleSheet(
         //linux下按钮不透明
         "QPushButton{"
@@ -86,7 +89,7 @@ void MyPushBtn::mousePressEvent(QMouseEvent *e)
         this->setIcon(pix);
         this->setIconSize(pix.size());
     }
-   /* return*/ QPushButton::mousePressEvent(e);   //确定这里要加return？
+    return QPushButton::mousePressEvent(e);   //确定这里要加return？
 }
 
 void MyPushBtn::mouseReleaseEvent(QMouseEvent *e)
@@ -107,5 +110,5 @@ void MyPushBtn::mouseReleaseEvent(QMouseEvent *e)
         this->setIcon(pix);
         this->setIconSize(pix.size());
     }
-    /*return */QPushButton::mouseReleaseEvent(e);
+    return QPushButton::mouseReleaseEvent(e);
 }

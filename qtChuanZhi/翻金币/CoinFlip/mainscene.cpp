@@ -17,7 +17,7 @@ MainScene::MainScene(QWidget *parent)
     });
 
     //创建start按钮
-    MyPushBtn* startBtn=new MyPushBtn(QString(":/res/MenuSceneStartButton.png"));
+    MyPushBtn* startBtn=new MyPushBtn(":/res/MenuSceneStartButton.png");
     startBtn->setParent(this);
     startBtn->move(this->width()*0.5-startBtn->width()*0.5,this->height()*0.80);
 
@@ -64,6 +64,4 @@ void MainScene::paintEvent(QPaintEvent *event)
     pix.load(":/res/Title.png");
     pix=pix.scaled(pix.width()*0.5,pix.height()*0.5); //缩放图片
     painter.drawPixmap(10,30,pix.width(),pix.height(),pix);
-
-
 }
