@@ -10,6 +10,7 @@
 
 #include "mypushbtn.h"
 #include "mycoin.h"
+#include "dataconfig.h"
 
 namespace Ui {
 class PlayScene;
@@ -29,6 +30,7 @@ signals:
 private:
     Ui::PlayScene *ui;
     int mLevel;
+    int mGameArry[4][4];
 };
 
 #endif // PLAYSCENE_H

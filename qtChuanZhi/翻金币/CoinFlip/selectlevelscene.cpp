@@ -32,6 +32,7 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
             this->hide();
             emit this->selectSceneBack();
         });
+    });
 
     connect(ui->exitAct,&QAction::triggered,this,[=](){
         this->close();
@@ -80,7 +81,7 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
                         this->mPlayScene->show();
 
                         connect(mPlayScene,&PlayScene::playSceneBack,this,[=](){
-                            mPlayScene->deleteLater();
+                            // mPlayScene->deleteLater();
                             mPlayScene=NULL;
                             this->show();
                         });
@@ -88,8 +89,8 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
             }
         });
      }
-});
 }
+
 
 SelectLevelScene::~SelectLevelScene()
 {

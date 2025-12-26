@@ -31,6 +31,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         selectlevelscene.h selectlevelscene.cpp selectlevelscene.ui
         playscene.h playscene.cpp playscene.ui
         mycoin.h mycoin.cpp mycoin.ui
+        dataconfig.h
+        dataconfig.cpp
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET CoinFlip APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR

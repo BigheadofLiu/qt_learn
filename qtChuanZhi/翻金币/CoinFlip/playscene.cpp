@@ -27,6 +27,7 @@ PlayScene::PlayScene(int level):ui(new Ui::PlayScene)
         this->close();
         //要不要发射一个信号 让上级页面也关闭还是显示出来？
     });
+
     //返回按钮
     MyPushBtn* backBtn=new MyPushBtn(":/res/BackButton.png",":/res/BackButtonSelected.png");
     backBtn->setParent(this);
@@ -50,7 +51,14 @@ PlayScene::PlayScene(int level):ui(new Ui::PlayScene)
         });
     });
 
-    //创建金币背景
+    //初始化关卡数据
+    dataConfig config;
+    for(auto i=0;i<4;i++){
+        for(auto j=0;j<4;j++){
+            this->mGameArry[i][j]=config.mData[this->mLevel][i][j];
+        }
+    }
+
     //创建金币的背景图片
     for(int i = 0 ; i < 4;i++)
     {
@@ -71,9 +79,21 @@ PlayScene::PlayScene(int level):ui(new Ui::PlayScene)
             // 120 + (i%4)*70 , 260+ (i/4)*70
 
             //金币对象创建
-            MyCoin * coin = new MyCoin(":/res/Coin0001.png");
+            QString img;
+            if(mGameArry[i][j] == 1)
+            {
+                img = ":/res/Coin0001.png";
+            }
+            else
+            {
+                img = ":/res/Coin0008.png";
+            }
+            MyCoin * coin = new MyCoin(img);
             coin->setParent(this);
             coin->move(140 + i*50,300+j*50);
+            coin->mPosX=i;
+            coin->mPosY=j;
+            coin->mFlag=mGameArry[i][j];
         }
     }
 }
