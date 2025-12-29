@@ -9,6 +9,10 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
     this->setFixedSize(490,860);
     this->setWindowTitle("选择关卡");
     this->setWindowIcon(QPixmap(":/res/Coin0001.png"));
+    QSoundEffect* selectSound=new QSoundEffect(this);
+    selectSound->setSource(QUrl::fromLocalFile(":/res/TapButtonSound.wav"));
+    QSoundEffect* backSound=new QSoundEffect(this);
+    backSound->setSource(QUrl::fromLocalFile(":/res/BackButtonSound.wav"));
 
     //返回按钮
     MyPushBtn* backBtn=new MyPushBtn(":/res/BackButton.png",":/res/BackButtonSelected.png");
@@ -27,7 +31,7 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
         //     this->hide();
         //     emit this->selectSceneBack();   //  发射返回信号
         // });
-
+        backSound->play();
         QTimer::singleShot(500,this,[=](){
             this->hide();
             emit this->selectSceneBack();
@@ -35,6 +39,7 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
     });
 
     connect(ui->exitAct,&QAction::triggered,this,[=](){
+        backSound->play();
         this->close();
     });
 
@@ -58,7 +63,7 @@ SelectLevelScene::SelectLevelScene(QWidget *parent)
         //关联鼠标点击
         connect(levelBtn,&MyPushBtn::clicked,this,[=](){
             qDebug()<<QString("玩家选择了第%1关").arg(i+1);
-
+            selectSound->play();
             if(mPlayScene==nullptr){
                 //能不能给加个按下动画
                 levelBtn->myZoom1();

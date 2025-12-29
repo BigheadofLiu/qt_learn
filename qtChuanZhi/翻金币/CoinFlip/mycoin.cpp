@@ -32,6 +32,8 @@ MyCoin::MyCoin(QString btnImg)
     this->setIcon(pix);
     this->setIconSize(pix.size());
 
+    this->setMouseTracking(true);
+
     this->mTimer1=new QTimer(this);
     this->mTimer2=new QTimer(this);
 
@@ -52,6 +54,8 @@ MyCoin::MyCoin(QString btnImg)
         this->setIconSize(pix.size());
         if(this->mMin>mMax){
             this->mMin=1;
+            this->isDomain=false;
+            // this->mFlag=
             mTimer1->stop();
         }
     });
@@ -70,8 +74,9 @@ MyCoin::MyCoin(QString btnImg)
             );
         this->setIcon(pix);
         this->setIconSize(pix.size());
-        if(this->mMin>mMax){
+        if(this->mMax<mMin){
             this->mMax=8;
+            this->isDomain=false;
             mTimer2->stop();
         }
     });
@@ -81,9 +86,30 @@ MyCoin::MyCoin(QString btnImg)
 void MyCoin::cionChange()
 {   //金币翻转
     if(this->mFlag){
+        this->isDomain=true;
         this->mTimer1->start(30);
         this->mFlag=false;
+    }else{
+        this->isDomain=true;
+        this->mTimer2->start(30);
+        this->mFlag=true;
     }
-    this->mTimer2->start(30);
-    this->mFlag=true;
+
 }
+
+void MyCoin::mousePressEvent(QMouseEvent *even)
+{
+
+    if(this->isDomain || mIsWin==true){   //1.防止金币连击 2.防止胜利之后继续点击
+        return;
+    }  //连击不作反应
+    QPushButton::mousePressEvent(even);
+}
+
+// void MyCoin::mousePressEvent(QMouseEvent *ev)
+// {
+//     if(this->isDomain){
+//         return;
+//     }  //连击不作反应
+//     return QPushButton::event(ev);
+// }

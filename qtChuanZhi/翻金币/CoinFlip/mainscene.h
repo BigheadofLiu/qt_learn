@@ -9,6 +9,7 @@
 #include <QEvent>
 #include <QString>
 #include <QTimer>
+#include <QSoundEffect>
 
 #include "mypushbtn.h"
 #include "selectlevelscene.h"

@@ -12,9 +12,7 @@ MainScene::MainScene(QWidget *parent)
     this->setWindowIcon(QIcon(":/res/Coin0001.png"));  //为什么设置了不生效(linux环境）
     // setMouseTracking(false);
 
-    connect(ui->quitAct,&QAction::triggered,[this](){
-        this->close();
-    });
+
 
     //创建start按钮
     MyPushBtn* startBtn=new MyPushBtn(":/res/MenuSceneStartButton.png");
@@ -23,7 +21,20 @@ MainScene::MainScene(QWidget *parent)
 
     SelectLevelScene* levelScene=new SelectLevelScene(this);
     // SelectLevelScene
+
+    QSoundEffect* startSound=new QSoundEffect(this);
+    startSound->setSource(QUrl::fromLocalFile(":/res/TapButtonSound.wav"));
+
+    QSoundEffect* backSound=new QSoundEffect(this);
+    startSound->setSource(QUrl::fromLocalFile(":/res/BackButtonSound.wav"));
+
+    connect(ui->quitAct,&QAction::triggered,this,[=](){
+        backSound->play();
+        this->close();
+    });
+
     connect(startBtn,&MyPushBtn::clicked,[=](){
+        startSound->play();
         startBtn->myZoom1();
         startBtn->myZoom2();
         //这样写是不是更容易理解一点

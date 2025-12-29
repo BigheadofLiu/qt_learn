@@ -5,6 +5,7 @@
 #include <QPainter>
 #include <QTimer>
 #include <QLabel>
+#include <QSoundEffect>
 
 #include "mypushbtn.h"
 #include "playscene.h"
