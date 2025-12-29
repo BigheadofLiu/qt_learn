@@ -154,7 +154,7 @@ PlayScene::PlayScene(int level):ui(new Ui::PlayScene)
                     this->mIsWin=true;  //默认游戏胜利
                     for(auto i=0;i<4;i++){
                         for(auto j=0;j<4;j++){
-                            mIconBtnArry[i][j]->mIsWin=true;  //设置为胜利 禁止点击
+                            // mIconBtnArry[i][j]->mIsWin=true;  //设置为胜利 禁止点击
                             if(mIconBtnArry[i][j]->mFlag == false){
                                 //如果存在任意一个银色金币
                                 //就判断游戏还没胜利
@@ -163,9 +163,19 @@ PlayScene::PlayScene(int level):ui(new Ui::PlayScene)
                                 break;
                             }
                         }
+                        if(!this->mIsWin){
+                            break;
+                        }
                     }
 
                     if(this->mIsWin){
+                        // 禁用所有按钮
+                        for (auto i = 0; i < 4; i++) {
+                            for (auto j = 0; j < 4; j++) {
+                                mIconBtnArry[i][j]->mIsWin = true;  // 设置按钮不可点击
+                                // mIconBtnArry[i][j]->setEnabled(false);  // 禁用按钮
+                            }
+                        }
                         qDebug()<<"游戏胜利";
                         successSound->play();
                         //设置游戏胜利过场动画
