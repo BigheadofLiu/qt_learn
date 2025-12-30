@@ -60,7 +60,44 @@ APPIMAGE_EXTRACT_AND_RUN=1 linuxdeployqt Qt_Event \
 
 #打包完成会出现项目名.AppImage的文件 赋予执行权限后可正常运行
 ```
-###### 未完待续
+##### Vscode配置Qt开发环境(适用于Cmkae项目)
+1.安装插件
+不解释
+2.打开qt项目cmake文件
+<img src="./shotimg/image.png" width="350">
+<img src="./shotimg/image copy.png" width="350">
+3.配置QT代码提示
+```
+cd build
+cmake .. -DCMAKE_EXPORT_COMPILE_COMMANDS=ON  //此步骤会在build下生成compile_commands.json
+cd ../
+mkdir -p .vscode
+```
+在vscode文件下下新建文件：c_cpp_properties.json
+在里面写入：
+```json
+{
+    "version": 4,
+    "configurations": [
+        {
+            "name": "Qt-CMake",
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",   //不要动
+        //  以下手动指定可以不写
+        //     "intelliSenseMode": "linux-gcc-arm64",      //编译器路径
+        //     "compilerPath": "/usr/bin/c++",   
+        //     "cppStandard": "c++17"
+        // }
+    ]
+}
+```
+刷新窗口资源：ctrl+shift+P >relaod window
+QT相关头文件和宏可以正常使用
+
+
+
+
+
+
 
 
 
