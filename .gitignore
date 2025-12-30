@@ -2,6 +2,7 @@
 .idea/
 .qtcreator
 .txt.user
+.vscode
 #dir
 Clone/
 build/
