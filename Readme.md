@@ -10,10 +10,11 @@ qtDabing：【Qt开发编程-入门基础教程Qt5】 https://www.bilibili.com/v
 qtChuanzhi:【最新QT从入门到实战完整版|传智教育】 https://www.bilibili.com/video/BV1g4411H78N/?share_source=copy_web&vd_source=6af53dca693e6d5496c6a5fed45a4663
 ##### Qt连接mysql记录
 ###### 测试环境：mac使VMware Fusion虚拟机 ubuntu 25.10+Qt 6.9.3+mysql 8.4.7 
-<img src="./shotimg/dffd5164-5e1c-47e6-b199-82d1ed6397fa.png" width="200">
-<img src="./shotimg/81278272-5be7-4a0d-8631-457cd23c08f0.png" width="283">
+<img src="./shotimg/dffd5164-5e1c-47e6-b199-82d1ed6397fa.png" width="400">
 
-<img src="./shotimg/45e3c4ec-334f-4d18-9534-70b8906081a4.png" width="300">
+<img src="./shotimg/81278272-5be7-4a0d-8631-457cd23c08f0.png" width="400">
+
+<img src="./shotimg/45e3c4ec-334f-4d18-9534-70b8906081a4.png" width="400">
 
 >1.准备工作
 
@@ -63,9 +64,12 @@ APPIMAGE_EXTRACT_AND_RUN=1 linuxdeployqt Qt_Event \
 ##### Vscode配置Qt开发环境(适用于Cmkae项目)
 1.安装插件
 不解释
+
 2.打开qt项目cmake文件
-<img src="./shotimg/image.png" width="350">
-<img src="./shotimg/image copy.png" width="350">
+<img src="./shotimg/image.png" width="800">
+
+<img src="./shotimg/image copy.png" width="800">
+
 3.配置QT代码提示
 ```
 cd build
