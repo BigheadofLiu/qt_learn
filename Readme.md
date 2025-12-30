@@ -86,7 +86,7 @@ mkdir -p .vscode
         //     "intelliSenseMode": "linux-gcc-arm64",      //编译器路径
         //     "compilerPath": "/usr/bin/c++",   
         //     "cppStandard": "c++17"
-        // }
+         }
     ]
 }
 ```
