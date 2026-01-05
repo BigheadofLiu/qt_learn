@@ -85,11 +85,7 @@ mkdir -p .vscode
     "configurations": [
         {
             "name": "Qt-CMake",
-            "compileCommands": "${workspaceFolder}/build/compile_commands.json",   //不要动
-        //  以下手动指定可以不写
-        //     "intelliSenseMode": "linux-gcc-arm64",      //编译器路径
-        //     "compilerPath": "/usr/bin/c++",   
-        //     "cppStandard": "c++17"
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json"  
          }
     ]
 }
